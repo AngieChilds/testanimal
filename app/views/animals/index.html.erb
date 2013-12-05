@@ -1,0 +1,117 @@
+<!-- Header and Nav -->
+  
+  <div class="row">
+    <div class="large-3 columns">
+      
+    </div>
+    <div class="large-9 columns">
+      <ul class="inline-list right">
+        
+      </ul>
+    </div>
+  </div>
+  
+  <!-- End Header and Nav -->
+  
+  
+  <div class="row">    
+    
+    <!-- Main Content Section -->
+    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+    <div class="large-9 push-3 columns">
+      <table class="horizontal_table" style="width: 500px; height: 10px;" border="1">
+<tbody>
+
+  <tr>
+    <th>Breed</th>
+    <th>Name</th>
+    <th>Owner</th>
+    <th>Food</th>
+    <th>feed</th>
+    <th>Buy food</th>
+    <th>sell </th>
+    
+   
+  </tr>
+</tbody>
+</table>
+
+<div id="animal-list">
+<% @animals.each do |animal| %>
+  <table class="horizontal_table" style="width: 500px; height: 10px;" border="1" cellspacing="0">
+<tbody>
+
+
+  <tr>
+    <td ><%= animal.breed %></td>
+    <td><%= animal.name %></td>
+    <td><%= animal.owner %></td>
+    <td ><%= animal.food %></td>
+    <td><%= link_to image_tag("HayBale-icon.png", size: "30x30")+"feed", feed_animal_path(animal), method: :patch %></td>
+    <td><%= link_to 'More food', more_animal_path(animal), method: :patch %></td>
+    <td><%= link_to 'Sell', animal_path(animal), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+      
+    </div>
+    
+    
+    <!-- Nav Sidebar -->
+    <!-- This is source ordered to be pulled to the left on larger screens -->
+    <div class="large-3 pull-9 columns">
+        
+      <ul class="side-nav">
+        
+      </ul>
+      
+      <p><%=image_tag("horse.png", size: "150x150")%></p>
+        
+    </div>
+    
+  </div>
+    
+  
+  <!-- Footer -->
+  
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p><%=image_tag("za.png", size: "30x30") %> Proudly South African</p>
+        </div>
+        <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><%= image_tag("Young-Lion-icon.png", size: "30x30") %> </li>
+            <li><%= image_tag("Bird-icon.png", size: "30x30") %> </li>
+            <li><%= image_tag("Panda-icon.png", size: "30x30") %> </li>
+            <li><%= image_tag("butterfly-icon.png", size: "30x30") %> </li>
+            <li><%= image_tag("cow-icon.png", size: "30x30") %> </li>
+            <li><%= image_tag("elephant-icon.png", size: "30x30") %> </li>
+            <li><%= image_tag("lion-icon.png", size: "30x30") %> </li>
+            <li><%= image_tag("zebra-icon.png", size: "30x30") %> </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

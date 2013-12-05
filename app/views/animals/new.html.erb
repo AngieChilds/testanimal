@@ -1,0 +1,17 @@
+<% content_for :title do %>Animal<% end %>
+<h3>Animal</h3>
+<div class="form">
+  <%= simple_form_for @animal do |form| %>
+    <%= form.error_notification %>
+    <%= form.input :name %>
+  <%= form.radio_button :breed, 'Lion' %> <%=image_tag("lion-icon.png", size: "30x30")%>
+  <%= form.label :breed_lion, 'Lion' %>
+  <%= form.radio_button :breed, 'Zebra' %><%= image_tag("zebra-icon.png", size: "30x30") %>         
+  <%= form.label :breed_lion, 'Zebra' %>
+  
+    <%= form.input :owner %>
+    <%= form.button :submit, 'Submit', class: 'submit' %>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,8 @@
+<% content_for :title do %>Animal<% end %>
+<h3>Animal</h3>
+<div class="form">
+  <%= simple_form_for @animal do |form| %>
+    <%= form.error_notification %>
+    <%= form.button :submit, 'Submit', class: 'submit' %>
+  <% end %>
+</div>
